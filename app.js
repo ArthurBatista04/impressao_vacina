@@ -1,4 +1,4 @@
-// http://www.printhtml.com/ é necessário para funcionar
+// IrfanView é necessário para funcionar
 const express = require("express");
 const bodyParser = require("body-parser");
 const nodeHtmlToImage = require("node-html-to-image");
@@ -7,6 +7,20 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
+
+const imprimir = async () => {
+  const util = require("util");
+  const exec = util.promisify(require("child_process").exec);
+  try {
+    await exec(
+      '"C:\\Program Files\\IrfanView\\i_view64.exe" .\\image.png /print'
+    );
+    return 200;
+  } catch (error) {
+    console.log(error);
+    return 500;
+  }
+};
 
 app.post("/", (req, res) => {
   const { nomeComecial, nomeGenerico, lote, aplicador, dataAplicacao } = {
@@ -29,14 +43,10 @@ app.post("/", (req, res) => {
 	
 	<p style="font-size:18px; font-weight: bold; margin: 0px; color:color:#424242">Enf. ${aplicador}</p>
 	</div></body></html>`,
-  }).then(() => res.sendStatus(200));
-  var exec = require("child_process").exec;
-  exec(
-    "& 'C:\Program Files\IrfanView\i_view64.exe' .\image.png /print",
-    function (err, data) {
-      console.log(data.toString());
-    }
-  );
+  }).then(() => {
+	const status = await imprimir();
+	res.sendStatus(status)
+  });
 });
 
 app.listen(port, () => {
