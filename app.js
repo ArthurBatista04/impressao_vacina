@@ -43,7 +43,7 @@ app.post("/", (req, res) => {
 	
 	<p style="font-size:18px; font-weight: bold; margin: 0px; color:color:#424242">Enf. ${aplicador}</p>
 	</div></body></html>`,
-  }).then(() => {
+  }).then(async () => {
 	const status = await imprimir();
 	res.sendStatus(status)
   });
