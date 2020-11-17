@@ -23,13 +23,7 @@ const imprimir = async () => {
 };
 
 app.post("/", (req, res) => {
-  const { nomeComecial, nomeGenerico, lote, aplicador, dataAplicacao } = {
-    nomeComecial: "Teste 123",
-    nomeGenerico: "teste 1234",
-    lote: "5",
-    aplicador: "Joao da silva",
-    dataAplicacao: "hoje",
-  };
+  const { nomeComecial, nomeGenerico, lote, aplicador, dataAplicacao } = req;
   nodeHtmlToImage({
     output: "./image.png",
     html: `<html>  <style>body {width: 100px;height: 120px;}</style><body><div style="width:100px;height:120px;background-color:#f5f5f5;display:flex;flex-direction:column;justify-content:space-around; align-items:center;">
