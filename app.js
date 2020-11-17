@@ -23,19 +23,19 @@ const imprimir = async () => {
 };
 
 app.post("/", (req, res) => {
-  const { nomeComecial, nomeGenerico, lote, aplicador, dataAplicacao } = req;
+  const { nomeComecial, nomeGenerico, lote, aplicador, dataAplicacao } = req.body;
   nodeHtmlToImage({
     output: "./image.png",
     html: `<html>  <style>body {width: 100px;height: 120px;}</style><body><div style="width:100px;height:120px;background-color:#f5f5f5;display:flex;flex-direction:column;justify-content:space-around; align-items:center;">
-	<p  style="font-size:18px; margin: 0px; color:#424242"><b>${nomeComecial}</b></p>
+	<p  style="font-size:15px; margin: 0px; color:#424242"><b>${nomeComecial}</b></p>
 	
-	<p style="font-size:15px; font-weight:bold;color:#424242; margin: 0px">${nomeGenerico}</p>
+	<p style="font-size:13px; font-weight:bold;color:#424242; margin: 0px">${nomeGenerico}</p>
 	
-	<p style="font-size:18px; font-weight:bold; margin:0px; color: color:#424242">Lote: ${lote}</p> 
+	<p style="font-size:15px; font-weight:bold; margin:0px; color: color:#424242">Lote: ${lote}</p> 
 	
-	<p style="font-size:18px; font-weight:bold; color:color:#424242; margin: 0px">${dataAplicacao}</p>
+	<p style="font-size:15px; font-weight:bold; color:color:#424242; margin: 0px">${dataAplicacao}</p>
 	
-	<p style="font-size:18px; font-weight: bold; margin: 0px; color:color:#424242">Enf. ${aplicador}</p>
+	<p style="font-size:15px; font-weight: bold; margin: 0px; color:color:#424242">Enf. ${aplicador}</p>
 	</div></body></html>`,
   }).then(async () => {
 	const status = await imprimir();
