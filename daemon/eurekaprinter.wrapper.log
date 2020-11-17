@@ -1,0 +1,4 @@
+2020-11-17 17:59:58 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\thiag\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Users\thiag\Desktop\impressao_vacina\app.js --scriptoptions= --log "EurekaPrinter wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-11-17 17:59:58 - Started 2688
+2020-11-17 18:25:24 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\thiag\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\Users\thiag\Desktop\impressao_vacina\app.js --scriptoptions= --log "EurekaPrinter wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-11-17 18:25:24 - Started 4224
