@@ -1,10 +1,13 @@
 // IrfanView é necessário para funcionar
 const express = require("express");
 const bodyParser = require("body-parser");
-var fs = require("fs");
-var text2png = require("text2png");
+const fs = require("fs");
+const text2png = require("text2png");
+
 const app = express();
-const port = 3008;
+const port = 3000;
+const fileOutput = 'output.png'
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
@@ -14,11 +17,11 @@ const imprimir = async () => {
   const exec = util.promisify(require("child_process").exec);
   try {
     await exec(
-      '"C:\\Program Files\\IrfanView\\i_view64.exe" .\\out.png /print'
+      `"C:\\Program Files\\IrfanView\\i_view64.exe" .\\${fileOutput} /print`
     );
     return 200;
   } catch (error) {
-    return 500;
+    throw new Error(error)
   }
 };
 
@@ -35,18 +38,24 @@ app.post("/", async (req, res) => {
 
   const config = {
     backgroundColor: '#fff',
-    font: '13px',
-    strokeWidth: .1,
+    font: '60px sans-serif',
+    strokeWidth: 2,
     strokeColor: 'black',
-    localFontPath: 'Goldman-Bold.ttf',
-  localFontName: 'Goldman-Bold'
   }
 
-  fs.writeFileSync("out.png", text2png(text, config));
-  const status = await imprimir();
-  res.sendStatus(200);
+  fs.writeFileSync(fileOutput, text2png(text, config));
+  try {
+    await imprimir();
+    res.send({
+      ok: true,
+      data: req.body
+    })
+  }catch(error) {
+    throw new Error(error)
+  }
+  
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Eureka Printer listening at http://localhost:${port}`);
 });

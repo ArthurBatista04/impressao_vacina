@@ -1,2 +1,6 @@
 ERRO: o processo com PID 8696 (processo filho de PID 11124) n∆o pìde ser finalizado.
 Raz∆o: N∆o h† ocorrància da tarefa em execuá∆o.
+
+(process:5904): Pango-WARNING **: 16:11:39.820: couldn't load font "sans serif Not-Rotated 10px", falling back to "Sans Not-Rotated 10px", expect ugly output.
+
+(process:5904): Pango-WARNING **: 16:11:39.827: couldn't load font "sans serif 10px", falling back to "Sans 10px", expect ugly output.
