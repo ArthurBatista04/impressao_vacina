@@ -5,19 +5,19 @@ const fs = require("fs");
 const text2png = require("text2png");
 
 const app = express();
-const port = 3000;
+const port = 3010;
 const fileOutput = 'output.png'
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
-const imprimir = async () => {
+const imprimir = () => {
   const util = require("util");
   const exec = util.promisify(require("child_process").exec);
   try {
-    await exec(
-      `"C:\\Program Files\\IrfanView\\i_view64.exe" .\\${fileOutput} /print`
+    exec(
+      `"C:\\Program Files\\IrfanView\\i_view64.exe" C:\\Users\\thiag\\Desktop\\impressao_vacina\\output.png /print`
     );
     return 200;
   } catch (error) {
@@ -25,7 +25,11 @@ const imprimir = async () => {
   }
 };
 
-app.post("/", async (req, res) => {
+app.get("/teste", (req, res) => {
+  return res.sendStatus(200)
+})
+
+app.post("/", (req, res) => {
   const {
     nomeComercial,
     nomeGenerico,
@@ -43,9 +47,9 @@ app.post("/", async (req, res) => {
     strokeColor: 'black',
   }
 
-  fs.writeFileSync(fileOutput, text2png(text, config));
+  fs.writeFileSync('C:\\Users\\thiag\\Desktop\\impressao_vacina\\output.png', text2png(text, config));
   try {
-    await imprimir();
+    imprimir();
     res.send({
       ok: true,
       data: req.body
