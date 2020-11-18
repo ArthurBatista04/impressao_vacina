@@ -1,18 +1,30 @@
-2020-11-17 19:26:35 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\thiag\Desktop\impressao_vacina\node_modules\node-windows\lib\wrapper.js --file C:\Users\thiag\Desktop\impressao_vacina\app.js --scriptoptions= --log "EurekaPrinter wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
-2020-11-17 19:26:35 - Started 13104
-2020-11-17 21:06:36 - Stopping eurekaprinter.exe
-2020-11-17 21:06:36 - ProcessKill 13104
-2020-11-17 21:06:37 - Shutdown exception
-Message:O sistema está sendo desligado.
-
-Stacktrace:   em System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
-   em System.Management.ManagementScope.InitializeGuts(Object o)
-   em System.Management.ManagementScope.Initialize()
-   em System.Management.ManagementObjectSearcher.Initialize()
-   em System.Management.ManagementObjectSearcher.Get()
-   em winsw.WrapperService.GetChildPids(Int32 pid)
-   em winsw.WrapperService.StopProcessAndChildren(Int32 pid)
-   em winsw.WrapperService.StopIt()
-   em winsw.WrapperService.OnShutdown()
-2020-11-18 16:07:21 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\thiag\Desktop\impressao_vacina\node_modules\node-windows\lib\wrapper.js --file C:\Users\thiag\Desktop\impressao_vacina\app.js --scriptoptions= --log "EurekaPrinter wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
-2020-11-18 16:07:21 - Started 5592
+2020-11-18 17:31:18 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\thiag\Desktop\impressao_vacina\node_modules\node-windows\lib\wrapper.js --file C:\Users\thiag\Desktop\impressao_vacina\app.js --scriptoptions= --log "EurekaPrinter wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-11-18 17:31:18 - Started 3124
+2020-11-18 17:35:26 - Stopping eurekaprinter.exe
+2020-11-18 17:35:26 - ProcessKill 3124
+2020-11-18 17:35:26 - Found child process: 6840 Name: conhost.exe
+2020-11-18 17:35:26 - Found child process: 13232 Name: node.exe
+2020-11-18 17:35:26 - Stopping process 6840
+2020-11-18 17:35:26 - Send SIGINT 6840
+2020-11-18 17:35:26 - SIGINT to 6840 failed - Killing as fallback
+2020-11-18 17:35:26 - Found child process: 6416 Name: cmd.exe
+2020-11-18 17:35:26 - Found child process: 11556 Name: conhost.exe
+2020-11-18 17:35:26 - Found child process: 13124 Name: i_view64.exe
+2020-11-18 17:35:26 - Stopping process 11556
+2020-11-18 17:35:26 - Send SIGINT 11556
+2020-11-18 17:35:26 - SIGINT to 11556 failed - Killing as fallback
+2020-11-18 17:35:26 - Stopping process 13124
+2020-11-18 17:35:26 - Send SIGINT 13124
+2020-11-18 17:35:26 - SIGINT to 13124 failed - Killing as fallback
+2020-11-18 17:35:26 - Stopping process 6416
+2020-11-18 17:35:26 - Send SIGINT 6416
+2020-11-18 17:35:26 - SIGINT to 6416 failed - Killing as fallback
+2020-11-18 17:35:27 - Stopping process 13232
+2020-11-18 17:35:27 - Send SIGINT 13232
+2020-11-18 17:35:27 - SIGINT to 13232 failed - Killing as fallback
+2020-11-18 17:35:27 - Stopping process 3124
+2020-11-18 17:35:27 - Send SIGINT 3124
+2020-11-18 17:35:27 - SIGINT to 3124 failed - Killing as fallback
+2020-11-18 17:35:27 - Finished eurekaprinter.exe
+2020-11-18 17:35:28 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\thiag\Desktop\impressao_vacina\node_modules\node-windows\lib\wrapper.js --file C:\Users\thiag\Desktop\impressao_vacina\app.js --scriptoptions= --log "EurekaPrinter wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-11-18 17:35:28 - Started 3324

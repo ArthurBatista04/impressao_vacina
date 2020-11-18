@@ -1,6 +1,7 @@
-ERRO: o processo com PID 8696 (processo filho de PID 11124) n∆o pìde ser finalizado.
-Raz∆o: N∆o h† ocorrància da tarefa em execuá∆o.
+(node:13232) UnhandledPromiseRejectionWarning: Error: Error: Error: Command failed: "C:\Program Files\IrfanView\i_view64.exe" .\output.png /print
 
-(process:5904): Pango-WARNING **: 16:11:39.820: couldn't load font "sans serif Not-Rotated 10px", falling back to "Sans Not-Rotated 10px", expect ugly output.
-
-(process:5904): Pango-WARNING **: 16:11:39.827: couldn't load font "sans serif 10px", falling back to "Sans 10px", expect ugly output.
+    at C:\Users\thiag\Desktop\impressao_vacina\app.js:54:11
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13232) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:13232) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
