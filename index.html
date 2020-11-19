@@ -5,15 +5,22 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>API Impressora</title>
+	<title>API Impressora</title>
+	<link href="style.css" rel="stylesheet"/>
   </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
-
+  <body >
+	  <div class="box">
+		  <div>
+			  <img alt="EurekaLabs"  src="./public_eureka-labs-logo.png"></img>
+		  </div>
+	  </div>
+	  <div class="box">
+		  <div>
+			<h1 >Servidor Online</h1>
+		  </div>
+	  </div>
     <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+	<script src="./renderer.js"></script>
+	<script src="index.css"></script>
   </body>
 </html>
