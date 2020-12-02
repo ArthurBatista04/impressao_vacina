@@ -6,7 +6,7 @@ const text2png = require("text2png");
 
 const app = express();
 const port = 3010;
-const fileOutput = 'output.png'
+const fileOutput = "output.png";
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -21,15 +21,38 @@ const imprimir = () => {
     );
     return 200;
   } catch (error) {
-    throw new Error(error)
+    throw new Error(error);
   }
 };
 
-app.get("/teste", (req, res) => {
-  return res.sendStatus(200)
-})
+app.get("/imprimir_nome", (req, res) => {
+  const { nome } = req.body;
 
-app.post("/", (req, res) => {
+  const text = nome;
+
+  const config = {
+    backgroundColor: "#fff",
+    font: "60px sans-serif",
+    strokeWidth: 2,
+    strokeColor: "black",
+  };
+
+  fs.writeFileSync(
+    "C:\\Users\\thiag\\Desktop\\impressao_vacina\\output.png",
+    text2png(text, config)
+  );
+  try {
+    imprimir();
+    res.send({
+      ok: true,
+      data: req.body,
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
+app.post("/imprimir_etiqueta", (req, res) => {
   const {
     nomeComercial,
     nomeGenerico,
@@ -38,26 +61,28 @@ app.post("/", (req, res) => {
     dataAplicacao,
   } = req.body;
 
-  const text = `${nomeComercial}\n${nomeGenerico}\n${lote}\n${aplicador}\n${dataAplicacao}`
+  const text = `${nomeComercial}\n${nomeGenerico}\n${lote}\n${aplicador}\n${dataAplicacao}`;
 
   const config = {
-    backgroundColor: '#fff',
-    font: '60px sans-serif',
+    backgroundColor: "#fff",
+    font: "60px sans-serif",
     strokeWidth: 2,
-    strokeColor: 'black',
-  }
+    strokeColor: "black",
+  };
 
-  fs.writeFileSync('C:\\Users\\thiag\\Desktop\\impressao_vacina\\output.png', text2png(text, config));
+  fs.writeFileSync(
+    "C:\\Users\\thiag\\Desktop\\impressao_vacina\\output.png",
+    text2png(text, config)
+  );
   try {
     imprimir();
     res.send({
       ok: true,
-      data: req.body
-    })
-  }catch(error) {
-    throw new Error(error)
+      data: req.body,
+    });
+  } catch (error) {
+    throw new Error(error);
   }
-  
 });
 
 app.listen(port, () => {
